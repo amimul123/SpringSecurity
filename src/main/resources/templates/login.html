@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+	<form class="login-form" th:action="@{/login}" method="post">
+		<div class="imgcontainer">
+			<img src="/images/login-default.jpg" alt="Avatar" class="avatar">
+		</div>
+		<div th:if="${param.error}" class="clr-red, center">
+			Invalid Username or Password
+		</div>
+		
+		<div th:if="${param.logout}" class="clr-green, center">
+			Thanks to successfully logout !!
+		</div>
+
+		<div class="container">
+			<label for="uname"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" id="username" name="username" required>
+
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" id="password" name="password" required>
+
+			<button type="submit">Login</button>
+			<label>
+				<input type="checkbox" checked="checked" id"remember-me" name="remember-me"> Remember me
+			</label>
+		</div>
+
+		<div class="container" style="background-color:#f1f1f1">
+			<button type="button" class="cancelbtn">Cancel</button>
+			<span class="psw">Forgot <a href="#">password?</a></span>
+		</div>
+	</form>
+
+</body>
+
+</html>
