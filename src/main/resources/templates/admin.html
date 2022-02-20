@@ -1,15 +1,13 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-	<title>Home</title>
-	<link rel="stylesheet" href="/css/custom.css">
-</head>
+<head th:insert="header.html::header-part"></head>
 
 <body>
+	<header th:insert="header.html::navbar"></header>
 	<h3>Welcom To Admin Page </h3>
 	<div class="admin">
-	This is admin page. Only admin can access this page.
+		This is admin page. Only admin can access this page.
 	</div>
 </body>
 

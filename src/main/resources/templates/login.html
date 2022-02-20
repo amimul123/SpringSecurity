@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<title>Login</title>
@@ -11,11 +11,11 @@
 		<div class="imgcontainer">
 			<img src="/images/login-default.jpg" alt="Avatar" class="avatar">
 		</div>
-		<div th:if="${param.error}" class="clr-red, center">
+		<div th:if="${param.error}" class="clr-red center">
 			Invalid Username or Password
 		</div>
 		
-		<div th:if="${param.logout}" class="clr-green, center">
+		<div th:if="${param.logout}" class="clr-green center">
 			Thanks to successfully logout !!
 		</div>
 

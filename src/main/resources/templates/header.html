@@ -1,0 +1,22 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="header-part">
+	<meta charset="UTF-8" />
+	<title>Spring Security</title>
+	<link rel="stylesheet" th:href="@{~/css/all.min.css}">
+	<link rel="stylesheet" href="/css/custom.css">
+</head>
+
+<body>
+
+	<div th:fragment="navbar" class="navbar">
+		<a sec:authorize=isAuthenticated() class="active" href="#"><i class="fa  fa-fw fa-home"></i> Home</a>
+		<a sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')" href="#" th:href="@{/user}"><i class="fa fa-fw fa-search"></i> User</a>
+		<a sec:authorize="hasRole('ROLE_ADMIN')" href="#" th:href="@{/admin}"><i class="fa fa-fw fa-envelope"></i> Admin</a>
+		<a sec:authorize="isAuthenticated()" href="#" th:href="@{/logout}"><i class="fa fa-fw fa-user"></i> Logout</a>
+	</div>
+</body>
+
+</html>
