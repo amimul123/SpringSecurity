@@ -15,7 +15,7 @@
 		<a sec:authorize=isAuthenticated() th:class="${navActive=='home'}?active" th:href="@{/}"><i class="fa  fa-fw fa-home"></i> Home</a>
 		<a sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')" th:href="@{/user}" th:class="${navActive=='user'}?active"><i class="fa fa-fw fa-user"></i> User</a>
 		<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}" th:class="${navActive=='admin'}?active"><i class="fa fa-fw fa-user-gear"></i> Admin</a>
-		<a sec:authorize="isAuthenticated()" th:href="@{/logout}"><i class="fa fa-fw fa-right-from-bracket"></i> Logout</a>
+		<a sec:authorize="isAuthenticated()" class="logoutBtn" th:href="@{/logout}"><i class="fa fa-fw fa-right-from-bracket"></i> Logout</a>
 	</div>
 </body>
 

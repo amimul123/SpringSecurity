@@ -9,6 +9,10 @@
 	<div class="user">
 		This is an user page. Only users can access this page.
 	</div>
+	<div>
+		<p><strong>Username:</strong> <label th:text=${authentication.getName()}></label></p>
+		<p><strong>Role(s):</strong> <label th:text=${authentication.getAuthorities()}></label></p>
+	</div>
 </body>
 
 </html>

@@ -6,6 +6,9 @@
 	color: rgb(0, 128, 128);
 	font-size: 20px;
 }
+.logoutBtn{
+	float: right !important;
+}
 
 /*
 	navigation bar
