@@ -5,17 +5,17 @@
 <head th:fragment="header-part">
 	<meta charset="UTF-8" />
 	<title>Spring Security</title>
-	<link rel="stylesheet" th:href="@{~/css/all.min.css}">
+	<link rel="stylesheet" th:href="@{~/fontawesome/css/all.min.css}">
 	<link rel="stylesheet" href="/css/custom.css">
 </head>
 
 <body>
 
 	<div th:fragment="navbar" class="navbar">
-		<a sec:authorize=isAuthenticated() class="active" href="#"><i class="fa  fa-fw fa-home"></i> Home</a>
-		<a sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')" href="#" th:href="@{/user}"><i class="fa fa-fw fa-search"></i> User</a>
-		<a sec:authorize="hasRole('ROLE_ADMIN')" href="#" th:href="@{/admin}"><i class="fa fa-fw fa-envelope"></i> Admin</a>
-		<a sec:authorize="isAuthenticated()" href="#" th:href="@{/logout}"><i class="fa fa-fw fa-user"></i> Logout</a>
+		<a sec:authorize=isAuthenticated() th:class="${navActive=='home'}?active" th:href="@{/}"><i class="fa  fa-fw fa-home"></i> Home</a>
+		<a sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')" th:href="@{/user}" th:class="${navActive=='user'}?active"><i class="fa fa-fw fa-user"></i> User</a>
+		<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}" th:class="${navActive=='admin'}?active"><i class="fa fa-fw fa-user-gear"></i> Admin</a>
+		<a sec:authorize="isAuthenticated()" th:href="@{/logout}"><i class="fa fa-fw fa-right-from-bracket"></i> Logout</a>
 	</div>
 </body>
 
