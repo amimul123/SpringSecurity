@@ -1,2 +1,2 @@
 # SpringSecurity
-Login, Logout, Authentication and Authorization
+Login, Logout, Authentication and Authorization (Java Spring boot application)
